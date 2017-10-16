@@ -1,3 +1,5 @@
+可以在setting.py中设置邮件服务器：
+
 #Email
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
@@ -12,6 +14,16 @@ send_mail(
                 "subject",
                 "message",
                 "badsmiling@163.com",      #必须和EMAIL_HOST_USER相同
+                ['owenchenxy@gmail.com'],  #收件人列表
+                fail_silently=False,       #发送失败会提示
+            )
+            
+            
+也可以不在setting.py中做任何设置：
+send_mail(
+                "subject",
+                "message",
+                "badsmiling@163.com",      #发件邮箱
                 ['owenchenxy@gmail.com'],  #收件人列表
                 fail_silently=False,       #发送失败会提示
             )
