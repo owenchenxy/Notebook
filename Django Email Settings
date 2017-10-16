@@ -6,7 +6,15 @@ EMAIL_HOST = 'smtp.163.com'
 EMAIL_PORT = 25
 EMAIL_HOST_USER = 'badsmiling@163.com' 
 EMAIL_HOST_PASSWORD = '********'  
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
+send_mail(
+                "subject",
+                "message",
+                "badsmiling@163.com",      #必须和EMAIL_HOST_USER相同
+                ['owenchenxy@gmail.com'],  #收件人列表
+                fail_silently=False,       #发送失败会提示
+            )
 --------------------------------------------------------------------------------------------------------------------------
 gmail(google.com)
 POP3服务器地址:pop.gmail.com（SSL启用 端口：995）
